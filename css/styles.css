@@ -99,41 +99,41 @@ main section {
   background-position: right 2rem bottom 1.8rem;
   box-shadow: 0 10px 25px -5px rgba(13, 0, 64, 0.1), 0 8px 10px -6px rgba(13, 0, 64, 0.1);
 }
-.cards .card__title {
+.cards .card--title {
   color: hsl(234, 12%, 34%);
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.2rem;
 }
-.cards .card__text {
+.cards .card--text {
   color: hsl(212, 6%, 60%);
   font-size: 0.8rem;
 }
-.cards .card__supervisor {
+.cards .card--supervisor {
   border-top: 3px solid hsl(180, 62%, 55%);
   background-image: url("../images/icon-supervisor.svg");
 }
 @media (min-width: 73em) {
-  .cards .card__supervisor {
+  .cards .card--supervisor {
     align-self: center;
     grid-column: 1/2;
     grid-row: 1/-1;
   }
 }
-.cards .card__teambuilder {
+.cards .card--teambuilder {
   border-top: 3px solid hsl(0, 78%, 62%);
   background-image: url("../images/icon-team-builder.svg");
 }
-.cards .card__karma {
+.cards .card--karma {
   border-top: 3px solid hsl(34, 97%, 64%);
   background-image: url("../images/icon-karma.svg");
 }
-.cards .card__calculator {
+.cards .card--calculator {
   border-top: 3px solid hsl(212, 86%, 64%);
   background-image: url("../images/icon-calculator.svg");
 }
 @media (min-width: 73em) {
-  .cards .card__calculator {
+  .cards .card--calculator {
     align-self: center;
     grid-column: 3/-1;
     grid-row: 1/-1;
