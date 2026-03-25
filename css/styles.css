@@ -62,8 +62,8 @@ main section {
 .cards {
   display: grid;
   gap: 2rem;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 @media (min-width: 90em) {
   .cards {
@@ -76,7 +76,7 @@ main section {
   border-radius: 8px;
   padding: 2rem;
   min-height: 280px;
-  max-width: 400px;
+  width: 400px;
   background-size: 70px;
   background-repeat: no-repeat;
   background-position: right 2rem bottom 3rem;
