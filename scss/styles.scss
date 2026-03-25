@@ -15,15 +15,6 @@ a {
   color: inherit;
 }
 
-/* Make images easier to work with */
-img, picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Form elements inherit font */
-input, button, textarea, select { font: inherit; }
-
 
 /**************
 IMPORT FONTS
@@ -36,19 +27,111 @@ $primary-color: hsl(14, 45%, 36%);
 $secondary-color: #f3e5d8;
 $light-color: hsl(0, 0%, 100%);
 $dark-color: hsla(0, 0%, 8%, 0.711);
-$dark-color-second: #2f2f2c91;
-$important-color: #fff7fc;
-$important-text-color: #613147;
-$light-grey: rgba(93, 93, 93, 0.0901960784);
+$grey-500: hsl(234, 12%, 34%);
+$grey-400:hsl(212, 6%, 44%);
 $background-color: #fafafa;
 
+$cyan-color:hsl(180, 62%, 55%);
+$red-color:hsl(0, 78%, 62%);
+$orange-color:hsl(34, 97%, 64%);
+$blue-color: hsl(212, 86%, 64%);
+
+/*************
+Mixins
+**************/
+
+@mixin card-border($color){
+    border-top: 4px solid $color;
+}
 
 body{
     background-color: $background-color;
     font-family: "Poppins", sans-serif;
+   
 }
 
 main{
     display:grid;
     place-items: center;
+
+    section{
+        padding: 2rem;
+    }
 }
+
+.intro{
+    margin-bottom: 3rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    &__title{
+        color:$grey-500;
+        font-weight: 200;
+        font-size: 1.6rem;
+    }
+
+    &__title--emphasize{
+        font-weight:500;
+        display: block;;
+    }
+
+    &__text{
+        font-size: 0.95rem;
+        text-align: center;
+        color:$grey-400;
+    }
+}
+
+.cards{
+    display:flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .card{
+        background-color: $light-color;
+        border-radius: 8px;
+        padding: 2rem;
+        min-height: 280px;
+        background-size: 70px;
+        background-repeat: no-repeat;
+        background-position: right 2rem bottom 3rem;
+        box-shadow: 0 10px 25px -5px rgba(13, 0, 64, 0.1), 
+              0 8px 10px -6px rgba(13, 0, 64, 0.1);
+
+        &__title{
+            color:$grey-500;
+            font-weight: 600;
+            font-size:1.4rem;
+            margin-bottom: 0.2rem;
+        }
+
+        &__text{
+            color:$grey-400;
+            font-size: 0.8rem;
+        }
+     
+
+        &__supervisor{
+            @include card-border($cyan-color);
+            background-image: url('../images/icon-supervisor.svg');
+        }
+
+        &__teambuilder{
+            @include card-border($red-color);
+            background-image: url('../images/icon-team-builder.svg');
+        }
+
+        &__karma{
+            @include card-border($orange-color);
+            background-image: url('../images/icon-karma.svg');
+        }
+
+         &__calculator{
+            @include card-border($blue-color);
+            background-image: url('../images/icon-calculator.svg');
+        }
+    }
+}
+
