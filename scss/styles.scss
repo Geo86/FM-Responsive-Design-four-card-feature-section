@@ -23,12 +23,10 @@ IMPORT FONTS
 
 /*COLOR PALETTE*/
 
-$primary-color: hsl(14, 45%, 36%);
-$secondary-color: #f3e5d8;
 $light-color: hsl(0, 0%, 100%);
 $dark-color: hsla(0, 0%, 8%, 0.711);
 $grey-500: hsl(234, 12%, 34%);
-$grey-400:hsl(212, 6%, 44%);
+$grey-400:hsl(212, 6%, 60%);
 $background-color: #fafafa;
 
 $cyan-color:hsl(180, 62%, 55%);
@@ -37,16 +35,31 @@ $orange-color:hsl(34, 97%, 64%);
 $blue-color: hsl(212, 86%, 64%);
 
 /*************
+FLUID
+**************/
+
+//main title
+$title-font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+
+// subtitle
+$subtitle-font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+
+// intro text
+$intro-text-font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1rem);
+
+
+/*************
 Mixins
 **************/
 
 @mixin card-border($color){
-    border-top: 4px solid $color;
+    border-top: 3px solid $color;
 }
 
 body{
     background-color: $background-color;
     font-family: "Poppins", sans-serif;
+    min-height: 100vh;
    
 }
 
@@ -56,6 +69,15 @@ main{
 
     section{
         padding: 2rem;
+        width:100%;
+
+        @media (min-width:51em){
+            max-width:840px;
+        }
+        @media (min-width: 73em){
+            max-width: 1200px;
+        }
+       
     }
 }
 
@@ -65,36 +87,39 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-
-    /**1440px**/
-   
+    
 
     &__title{
         color:$grey-500;
         font-weight: 200;
-        font-size: 1.6rem;
+        font-size: $title-font-size;
+        
     }
 
     &__title--emphasize{
         font-weight:500;
         display: block;;
+        font-size: $subtitle-font-size;
     }
 
     &__text{
         font-size: 0.95rem;
         text-align: center;
         color:$grey-400;
+        max-width: 500px;
+        font-size:$intro-text-font-size;
+       
+       
     }
 }
 
 .cards{
-    
     display:grid;
     gap: 2rem;
     place-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
 
-     @media (min-width: 90em) {
+     @media (min-width: 73em) {
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(2,1fr);
     }
@@ -104,17 +129,17 @@ main{
         border-radius: 8px;
         padding: 2rem;
         min-height: 280px;
-        width: 400px;
+        width:370px;
         background-size: 70px;
         background-repeat: no-repeat;
-        background-position: right 2rem bottom 3rem;
+        background-position: right 2rem bottom 1.8rem;
         box-shadow: 0 10px 25px -5px rgba(13, 0, 64, 0.1), 
               0 8px 10px -6px rgba(13, 0, 64, 0.1);
 
         &__title{
             color:$grey-500;
             font-weight: 600;
-            font-size:1.4rem;
+            font-size:1.25rem;
             margin-bottom: 0.2rem;
         }
 
@@ -128,7 +153,7 @@ main{
             @include card-border($cyan-color);
             background-image: url('../images/icon-supervisor.svg');
 
-             @media (min-width: 90em) {
+             @media (min-width: 73em) {
                 align-self: center;
                 grid-column: 1 / 2;
                 grid-row: 1 / -1;
@@ -145,14 +170,13 @@ main{
         &__karma{
             @include card-border($orange-color);
             background-image: url('../images/icon-karma.svg');
-           /* grid-column: 2 / 3;
-            grid-row: 2 / -1;*/
+    
         }
 
          &__calculator{
             @include card-border($blue-color);
             background-image: url('../images/icon-calculator.svg');
-            @media (min-width: 90em) {
+            @media (min-width: 73em) {
                 align-self: center;
                 grid-column: 3/-1;
                 grid-row: 1/-1;

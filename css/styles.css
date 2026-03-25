@@ -21,11 +21,15 @@ IMPORT FONTS
 **************/
 /*COLOR PALETTE*/
 /*************
+FLUID
+**************/
+/*************
 Mixins
 **************/
 body {
   background-color: #fafafa;
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
 }
 
 main {
@@ -34,6 +38,17 @@ main {
 }
 main section {
   padding: 2rem;
+  width: 100%;
+}
+@media (min-width: 51em) {
+  main section {
+    max-width: 840px;
+  }
+}
+@media (min-width: 73em) {
+  main section {
+    max-width: 1200px;
+  }
 }
 
 .intro {
@@ -42,30 +57,32 @@ main section {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  /**1440px**/
 }
 .intro__title {
   color: hsl(234, 12%, 34%);
   font-weight: 200;
-  font-size: 1.6rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
 }
 .intro__title--emphasize {
   font-weight: 500;
   display: block;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
 }
 .intro__text {
   font-size: 0.95rem;
   text-align: center;
-  color: hsl(212, 6%, 44%);
+  color: hsl(212, 6%, 60%);
+  max-width: 500px;
+  font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1rem);
 }
 
 .cards {
   display: grid;
   gap: 2rem;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
 }
-@media (min-width: 90em) {
+@media (min-width: 73em) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -76,27 +93,27 @@ main section {
   border-radius: 8px;
   padding: 2rem;
   min-height: 280px;
-  width: 400px;
+  width: 370px;
   background-size: 70px;
   background-repeat: no-repeat;
-  background-position: right 2rem bottom 3rem;
+  background-position: right 2rem bottom 1.8rem;
   box-shadow: 0 10px 25px -5px rgba(13, 0, 64, 0.1), 0 8px 10px -6px rgba(13, 0, 64, 0.1);
 }
 .cards .card__title {
   color: hsl(234, 12%, 34%);
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   margin-bottom: 0.2rem;
 }
 .cards .card__text {
-  color: hsl(212, 6%, 44%);
+  color: hsl(212, 6%, 60%);
   font-size: 0.8rem;
 }
 .cards .card__supervisor {
-  border-top: 4px solid hsl(180, 62%, 55%);
+  border-top: 3px solid hsl(180, 62%, 55%);
   background-image: url("../images/icon-supervisor.svg");
 }
-@media (min-width: 90em) {
+@media (min-width: 73em) {
   .cards .card__supervisor {
     align-self: center;
     grid-column: 1/2;
@@ -104,20 +121,18 @@ main section {
   }
 }
 .cards .card__teambuilder {
-  border-top: 4px solid hsl(0, 78%, 62%);
+  border-top: 3px solid hsl(0, 78%, 62%);
   background-image: url("../images/icon-team-builder.svg");
 }
 .cards .card__karma {
-  border-top: 4px solid hsl(34, 97%, 64%);
+  border-top: 3px solid hsl(34, 97%, 64%);
   background-image: url("../images/icon-karma.svg");
-  /* grid-column: 2 / 3;
-   grid-row: 2 / -1;*/
 }
 .cards .card__calculator {
-  border-top: 4px solid hsl(212, 86%, 64%);
+  border-top: 3px solid hsl(212, 86%, 64%);
   background-image: url("../images/icon-calculator.svg");
 }
-@media (min-width: 90em) {
+@media (min-width: 73em) {
   .cards .card__calculator {
     align-self: center;
     grid-column: 3/-1;
