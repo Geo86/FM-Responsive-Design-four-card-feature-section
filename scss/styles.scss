@@ -66,6 +66,9 @@ main{
     align-items: center;
     gap: 1.5rem;
 
+    /**1440px**/
+   
+
     &__title{
         color:$grey-500;
         font-weight: 200;
@@ -85,15 +88,23 @@ main{
 }
 
 .cards{
-    display:flex;
-    flex-direction: column;
+    
+    display:grid;
     gap: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+     @media (min-width: 90em) {
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
 
     .card{
         background-color: $light-color;
         border-radius: 8px;
         padding: 2rem;
         min-height: 280px;
+        max-width: 400px;
         background-size: 70px;
         background-repeat: no-repeat;
         background-position: right 2rem bottom 3rem;
@@ -116,21 +127,37 @@ main{
         &__supervisor{
             @include card-border($cyan-color);
             background-image: url('../images/icon-supervisor.svg');
+
+             @media (min-width: 90em) {
+                align-self: center;
+                grid-column: 1 / 2;
+                grid-row: 1 / -1;
+             }
+            
         }
 
         &__teambuilder{
             @include card-border($red-color);
             background-image: url('../images/icon-team-builder.svg');
+         
         }
 
         &__karma{
             @include card-border($orange-color);
             background-image: url('../images/icon-karma.svg');
+           /* grid-column: 2 / 3;
+            grid-row: 2 / -1;*/
         }
 
          &__calculator{
             @include card-border($blue-color);
             background-image: url('../images/icon-calculator.svg');
+            @media (min-width: 90em) {
+                align-self: center;
+                grid-column: 3/-1;
+                grid-row: 1/-1;
+            
+            }
         }
     }
 }
