@@ -31,5 +31,14 @@ input, button, textarea, select {
 IMPORT FONTS
 **************/
 /*COLOR PALETTE*/
+body {
+  background-color: #fafafa;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
 
 /*# sourceMappingURL=styles.css.map */
