@@ -25,8 +25,8 @@ IMPORT FONTS
 
 $light-color: hsl(0, 0%, 100%);
 $dark-color: hsla(0, 0%, 8%, 0.711);
-$grey-500: hsl(234, 12%, 34%);
-$grey-400:hsl(212, 6%, 60%);
+$grey-500: hsl(235, 17%, 40%);
+$grey-400:hsl(0, 0%, 70%);
 $background-color: #fafafa;
 
 $cyan-color:hsl(180, 62%, 55%);
@@ -136,14 +136,14 @@ main{
         box-shadow: 0 10px 25px -5px rgba(13, 0, 64, 0.1), 
               0 8px 10px -6px rgba(13, 0, 64, 0.1);
 
-        &--title{
+        &__title{
             color:$grey-500;
             font-weight: 600;
             font-size:1.25rem;
             margin-bottom: 0.2rem;
         }
 
-        &--text{
+        &__text{
             color:$grey-400;
             font-size: 0.8rem;
         }

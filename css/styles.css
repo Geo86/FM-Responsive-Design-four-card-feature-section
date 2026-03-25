@@ -59,7 +59,7 @@ main section {
   gap: 1.5rem;
 }
 .intro__title {
-  color: hsl(234, 12%, 34%);
+  color: hsl(235, 17%, 40%);
   font-weight: 200;
   font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
 }
@@ -71,7 +71,7 @@ main section {
 .intro__text {
   font-size: 0.95rem;
   text-align: center;
-  color: hsl(212, 6%, 60%);
+  color: hsl(0, 0%, 70%);
   max-width: 500px;
   font-size: clamp(0.9375rem, 0.85rem + 0.3vw, 1rem);
 }
@@ -99,14 +99,14 @@ main section {
   background-position: right 2rem bottom 1.8rem;
   box-shadow: 0 10px 25px -5px rgba(13, 0, 64, 0.1), 0 8px 10px -6px rgba(13, 0, 64, 0.1);
 }
-.cards .card--title {
-  color: hsl(234, 12%, 34%);
+.cards .card__title {
+  color: hsl(235, 17%, 40%);
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.2rem;
 }
-.cards .card--text {
-  color: hsl(212, 6%, 60%);
+.cards .card__text {
+  color: hsl(0, 0%, 70%);
   font-size: 0.8rem;
 }
 .cards .card--supervisor {
